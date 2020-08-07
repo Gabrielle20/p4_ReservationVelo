@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang = "fr">
+<html>
+    <head>
+        <title>Réservation de vélo à Bordeaux</title>
+        <link rel = "stylesheet" href = "style.css">
+        <script src="js/composant.js"></script>
+        <script src="js/composantTest.js"></script>
+        <script src = "js/composantTest2.js"></script>
+        <script src = "js/dataHandler.js"></script>
+        <script src="js/main.js" defer></script>
+    </head>
+    <body>
+        <div class = "main-banner" id = "main-banner">
+            <div class = "imgban" id = "imgban1">
+            <div class = "imgban" id = "imgban2">
+
+            <div class = "imgban" id = "imgban3">
+
+            </div>
+        </div>
+
+
+     
+
+        <script>
+            var bannerStatus = 1;
+            var bannerTime = 4000;
+
+            window.onload = function(){
+                bannerLoop();
+            }
+
+            function bannerLoop(){
+                if (bannerStatus === 1) {
+                    document.getElementById("imgban2").style.opacity = "0";
+
+                    setTimeout(function(){
+                        document.getElementById("imgban1").style.right = "0px";
+                        document.getElementById("imgban1").style.zIndex = "1000";
+    
+                        document.getElementById("imgban2").style.right = "-800px";
+                        document.getElementById("imgban2").style.zIndex = "1500";
+    
+                        document.getElementById("imgban3").style.left = "800px";
+                        document.getElementById("imgban3").style.zIndex = "500";
+                    }, 500);
+
+                    setTimeout(function(){
+                        document.getElementById("imgban2").style.opacity = "1";
+                    }, 1000);
+                    bannerStatus = 2;
+                }
+
+
+
+                else if (bannerStatus === 2) {
+                    document.getElementById("imgban3").style.opacity = "0";
+
+                    setTimeout(function(){
+                        document.getElementById("imgban2").style.right = "0px";
+                        document.getElementById("imgban2").style.zIndex = "1000";
+    
+                        document.getElementById("imgban3").style.right = "-800px";
+                        document.getElementById("imgban3").style.zIndex = "1500";
+    
+                        document.getElementById("imgban1").style.left = "800px";
+                        document.getElementById("imgban1").style.zIndex = "500";
+                    }, 500);
+
+                    setTimeout(function(){
+                        document.getElementById("imgban3").style.opacity = "1";
+                    }, 1000);
+                    bannerStatus = 3;
+                }
+
+
+
+                else if (bannerStatus === 3) {
+                    document.getElementById("imgban1").style.opacity = "0";
+
+                    setTimeout(function(){
+                        document.getElementById("imgban3").style.right = "0px";
+                        document.getElementById("imgban3").style.zIndex = "1000";
+    
+                        document.getElementById("imgban1").style.right = "-800px";
+                        document.getElementById("imgban1").style.zIndex = "1500";
+    
+                        document.getElementById("imgban2").style.left = "800px";
+                        document.getElementById("imgban2").style.zIndex = "500";
+                    }, 500);
+
+                    setTimeout(function(){
+                        document.getElementById("imgban1").style.opacity = "1";
+                    }, 1000);
+                    bannerStatus = 1;
+                }
+
+            }
+
+            var startBannerLoop = setInterval(function(){
+                bannerLoop();
+            }, bannerTime);
+        </script>
+    </body>
+</html>

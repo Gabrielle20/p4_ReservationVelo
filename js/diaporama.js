@@ -17,9 +17,9 @@ class Diaporama extends Composant{
     this.tempo = setInterval(this.nextSlide.bind(this), this.timeout);
     
     this.slide     = new Slide("imageSlide", this.DOM);
-    this.prevtBt   = new SlideButton("prevButton", this.DOM);
-    this.playPause = new SlideButton("playPause", this.DOM);
-    this.nextBt    = new SlideButton("nextButton", this.DOM);
+    this.prevtBt   = new SlideButton("Prev", this.DOM);
+    this.playPause = new SlideButton("Play/Pause", this.DOM);
+    this.nextBt    = new SlideButton("Next", this.DOM);
 
     this.nextSlide();
   }
@@ -30,4 +30,6 @@ class Diaporama extends Composant{
     console.log(this.currentSlideId);
     this.slide.update(this.images[this.currentSlideId]);
   }
+
+  
 }

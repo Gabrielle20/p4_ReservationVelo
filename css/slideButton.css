@@ -1,0 +1,31 @@
+slideButton {
+    position: relative;
+    width: 65px;
+    top: -30px;
+    display: inline-block;
+    background-color: #d7d7d7;
+    margin-left: 1rem;
+    text-align: center;
+    border-radius: .25rem;
+    cursor: pointer;
+    font-weight: 900;
+    padding: .2rem;
+    font-family: "Font Awesome 5 Free";
+    color: white;
+}
+
+slidebutton.next:before {
+    content: "\f051";
+ }
+
+slidebutton.prev:before {
+  content: "\f048";
+}
+
+slidebutton.play:before {
+    content: "\f04b";
+}
+
+slidebutton.pause:before {
+    content: "\f04c";
+}

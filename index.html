@@ -8,6 +8,12 @@
         <link rel = "stylesheet" href = "css/diaporama.css">
         <link rel = "stylesheet" href = "css/slideButton.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
         <script src="js/composant.js"></script>
         <script src = "js/diaporama.js"></script>
         <script src = "js/slide.js"></script>
@@ -16,100 +22,28 @@
         <script src = "js/composantTest2.js"></script>
         <script src = "js/dataHandler.js"></script>
         <script src="js/main.js" defer></script>
+        <script sc="js/map.js"></script>
     </head>
 
 
     <body>
         <div class = "main-banner" id = "main-banner">
-            <div class = "imgban" id = "imgban1">
-            <div class = "imgban" id = "imgban2">
-
-            <div class = "imgban" id = "imgban3">
-
-            </div>
         </div>
 
-
-     
-
-        <script>
-           /* var bannerStatus = 1;
-            var bannerTime = 4000;
-
-            window.onload = function(){
-                bannerLoop();
-            }
-
-            function bannerLoop(){
-                if (bannerStatus === 1) {
-                    document.getElementById("imgban2").style.opacity = "0";
-
-                    setTimeout(function(){
-                        document.getElementById("imgban1").style.right = "0px";
-                        document.getElementById("imgban1").style.zIndex = "1000";
-    
-                        document.getElementById("imgban2").style.right = "-800px";
-                        document.getElementById("imgban2").style.zIndex = "1500";
-    
-                        document.getElementById("imgban3").style.left = "800px";
-                        document.getElementById("imgban3").style.zIndex = "500";
-                    }, 500);
-
-                    setTimeout(function(){
-                        document.getElementById("imgban2").style.opacity = "1";
-                    }, 1000);
-                    bannerStatus = 2;
-                }
-
-
-
-                else if (bannerStatus === 2) {
-                    document.getElementById("imgban3").style.opacity = "0";
-
-                    setTimeout(function(){
-                        document.getElementById("imgban2").style.right = "0px";
-                        document.getElementById("imgban2").style.zIndex = "1000";
-    
-                        document.getElementById("imgban3").style.right = "-800px";
-                        document.getElementById("imgban3").style.zIndex = "1500";
-    
-                        document.getElementById("imgban1").style.left = "800px";
-                        document.getElementById("imgban1").style.zIndex = "500";
-                    }, 500);
-
-                    setTimeout(function(){
-                        document.getElementById("imgban3").style.opacity = "1";
-                    }, 1000);
-                    bannerStatus = 3;
-                }
-
-
-
-                else if (bannerStatus === 3) {
-                    document.getElementById("imgban1").style.opacity = "0";
-
-                    setTimeout(function(){
-                        document.getElementById("imgban3").style.right = "0px";
-                        document.getElementById("imgban3").style.zIndex = "1000";
-    
-                        document.getElementById("imgban1").style.right = "-800px";
-                        document.getElementById("imgban1").style.zIndex = "1500";
-    
-                        document.getElementById("imgban2").style.left = "800px";
-                        document.getElementById("imgban2").style.zIndex = "500";
-                    }, 500);
-
-                    setTimeout(function(){
-                        document.getElementById("imgban1").style.opacity = "1";
-                    }, 1000);
-                    bannerStatus = 1;
-                }
-
-            }
-
-            var startBannerLoop = setInterval(function(){
-                bannerLoop();
-            }, bannerTime);*/
-        </script>
+        <div id="mapid">
+            <script>
+                var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+                L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                maxZoom: 18,
+                id: 'mapbox/streets-v11',
+                tileSize: 512,
+                zoomOffset: -1,
+                accessToken: 'your.mapbox.access.token'
+                }).addTo(mymap);
+            </script>
+        </div>
+         
+       
     </body>
 </html>

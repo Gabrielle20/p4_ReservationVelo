@@ -9,6 +9,9 @@ class Diaporama extends Composant{
    */
   constructor(name, domTarget, images, timeout){
     super(name, domTarget, "diaporama");
+    // console.log(this);
+    // const err = new Error();
+    // console.error(err.stack);
     
     console.log(this);
     
@@ -25,50 +28,47 @@ class Diaporama extends Composant{
     this.restart();
     this.nextSlide();
     
-
-      //Touches du clavier
+    //Touches du clavier
     window.addEventListener('keyup', (e) => {
       switch (e.key) {
         case 'ArrowLeft': 
           this.prevSlide();
           break;
-  
+
         case 'ArrowRight':
           this.nextSlide();
           break;
       }
-    })
+    });
   }
 
   nextSlide(){
     this.restart();
     this.currentSlideId++;
     if (this.currentSlideId >= this.images.length) this.currentSlideId = 0;
-    console.log(this.currentSlideId);
+    console.log("numero slide",this.currentSlideId);
     this.slide.update(this.images[this.currentSlideId]);
   }
 
   prevSlide(){
+    this.restart();
     this.currentSlideId--;
-    if (this.currentSlideId <= 0) this.currentSlideId = this.images.length -1;
+    if (this.currentSlideId < 0 ) this.currentSlideId = this.images.length-1;
     console.log(this.currentSlideId);
     this.slide.update(this.images[this.currentSlideId]);
   }
 
-
   playPause(){
     this.playing = !this.playing;
+    console.log(this.playing);
     if(!this.playing){
-      //arreter la tempo   
       clearInterval(this.tempo);
-      clearTimeout();
       this.playPauseBt.update("play");
     }
     else {
       this.restart();
       this.playPauseBt.update("pause");
     }
-
   }
 
   restart(){
@@ -76,11 +76,8 @@ class Diaporama extends Composant{
     this.tempo = setInterval(this.nextSlide.bind(this), this.timeout);
   }
 
-
-
   // onkeypress
   // onkeydown
   // onkeyup
-
-  
+ 
 }

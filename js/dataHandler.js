@@ -14,13 +14,13 @@ class DataHandler{
         this.getUserFormLocalStorage();
         this.getBookingFormSessionStorage();
         this.getDataFromApi(apiSrc);
-        demo.dataHandler = this;
+        veloReservation.dataHandler = this;
     }
 
     async getDataFromApi(apiSrc){
         const data = await fetch(apiSrc);
         this.data = await data.json();
-        demo.map.addToMap(this.data);
+        veloReservation.map.addToMap(this.data);
     }
 
     getUserFormLocalStorage(){

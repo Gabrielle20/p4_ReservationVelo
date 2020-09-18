@@ -39,20 +39,17 @@ class MapLeaflet extends Composant {
                 .openPopup();
         }
 
+        // this.markerCluster = new L.MarkerClusterGroup();
+        // this.stations = getStations();
+
+        // for (let i = 0; i < this.stations.length; i++){
+        //     this.latLng = new L.LatLng(stations[i][1], stations[i][2]);
+        //     this.marker = new L.marker(latLng, {title: stations[i][0]});
+        //     this.markerCluster.addLayer(marker);
+        // }
+
+        // this.mymap.addLayer(makerCluster);
+
     }
 }
 
-
-//this.marker = L.marker([44.84029065139799, -0.5657958984375]).addTo(this.mymap);
-
-// this.circle = L.circle([51.508, -0.11], {
-//     color: 'red',
-//     fillColor: '#f03',
-//     fillOpacity: 0.5,
-//     radius: 500
-// }).addTo(mymap);
-
-
-// marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
-// circle.bindPopup("I am a circle.");
-// polygon.bindPopup("I am a polygon.");

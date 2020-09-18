@@ -8,7 +8,10 @@ class DataHandler{
      */
     constructor(apiSrc){
         this.data = null;
-        this.user = {};
+        this.user = {
+            name     : "",
+            firstName:""
+        };
         this.booked = null;
         // sessionStorage.setItem('name',"Gabrielle");
         this.getUserFormLocalStorage();

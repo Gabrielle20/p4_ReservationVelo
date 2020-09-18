@@ -1,6 +1,6 @@
 class ReservationDetails extends Composant {
     constructor(){
-        super("reservationDetails", document.body, "div");
+        super("reservationDetails", document.body, "reservationDetail");
       }
 
     

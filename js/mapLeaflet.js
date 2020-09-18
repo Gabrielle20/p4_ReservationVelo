@@ -1,3 +1,5 @@
+/* global L */
+
 class MapLeaflet extends Composant {
 
     /**
@@ -22,34 +24,25 @@ class MapLeaflet extends Composant {
     }
 
     addToMap(list) {
-        console.log(list[0]);
-        let msg;
-        for (let i = 0, size = list.length; i < size; i++) {
-            msg = `
+        const markerCluster = new L.MarkerClusterGroup();
+        let 
+            latLng, 
+            marker
+        ;
+        for (let i = 0, size = list.length; i < size; i++){
+            latLng = new L.LatLng(list[i].position.lat, list[i].position.lng);
+            marker = new L.marker(latLng, {title: list[i].name});
+            marker.bindPopup(`
                 <em>${list[i].name}</em><br>
-                <i class="fas fa-parking"></i> : ${list[i].available_bike_stands}<br>
-                <i class="fas fa-bicycle"></i> : ${list[i].available_bikes}
-                <button onclick="veloReservation.reservation.newBooking(${i}, this.parentNode)">réservation</button>
-            `;
-
-
-
-            L.marker([list[i].position.lat,list[i].position.lng]).addTo(this.mymap)
-                .bindPopup(msg)
-                .openPopup();
+                <i class="fas fa-parking"></i> : ${list[i].bike_stands}<br>
+            `);
+            marker.on("click", function(){
+                window.veloReservation.reservation.newBooking(i)
+            });
+            markerCluster.addLayer(marker);
         }
 
-        // this.markerCluster = new L.MarkerClusterGroup();
-        // this.stations = getStations();
-
-        // for (let i = 0; i < this.stations.length; i++){
-        //     this.latLng = new L.LatLng(stations[i][1], stations[i][2]);
-        //     this.marker = new L.marker(latLng, {title: stations[i][0]});
-        //     this.markerCluster.addLayer(marker);
-        // }
-
-        // this.mymap.addLayer(makerCluster);
+        this.mymap.addLayer(markerCluster);
 
     }
 }
-

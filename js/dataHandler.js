@@ -12,10 +12,10 @@ class DataHandler{
             name     : "",
             firstName:""
         };
-        this.booked = null;
+        this.booking = null;
         // this.saveDataFromForm();
-        this.getUserFormLocalStorage();
-        this.getBookingFormSessionStorage();
+        // this.getUserFormLocalStorage();
+        // this.getBookingFormSessionStorage();
         // sessionStorage.setItem('name',"Gabrielle");
         this.getDataFromApi(apiSrc);
         veloReservation.dataHandler = this;
@@ -24,30 +24,41 @@ class DataHandler{
     async getDataFromApi(apiSrc){
         const data = await fetch(apiSrc);
         this.data = await data.json();
-        veloReservation.map.addToMap(this.data);
+        initPage();
     }
 
-    saveDataFromForm(){
-    //     let name = document.getElementById(name);
-    //     // let firstName = document.getElementById(${veloReservation.dataHandler.user.firstName});
-        var name = "";
-        localStorage.setItem('name', document.getElementById("name").value);
-        localStorage.setItem('Prenom', firstName);
+    setUser(user){
+        localStorage.setItem('name', user.name);
+        localStorage.setItem('firstName', user.firstName);
+    }
+
+    setBooking(timestamp, stationInformation){
+        this.booking = {
+            timestamp : timestamp,
+            stationInformation : stationInformation
+        };
+        sessionStorage.setItem('timestamp', timestamp);
+        sessionStorage.setItem('stationInformation', stationInformation);
     }
 
 
-    getUserFormLocalStorage(){
+    getUserFromLocalStorage(){
         const name      = localStorage.getItem('name');
         const firstName = localStorage.getItem('firstName');
         if ( name !== null ) this.user.name = name;
         if ( firstName !== null ) this.user.firstName = firstName;
-        console.log(name);
+        // console.log(name);
+        return this.user;
     }
 
-    getBookingFormSessionStorage(){
+    getBookingFromSessionStorage(){
         const timestamp          = sessionStorage.getItem('timestamp');
         const stationInformation = sessionStorage.getItem('stationInformation');
-        if ( timestamp !== null ) this.user.timestamp = timestamp;
-        if ( stationInformation !== null ) this.user.stationInformation = stationInformation;
+        if (timestamp === null && stationInformation === null) return null;
+        this.booking = {
+            timestamp : timestamp,
+            stationInformation : stationInformation
+        };
+        return this.booking;
     }
 }

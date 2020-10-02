@@ -7,8 +7,8 @@ class MapLeaflet extends Composant {
      * @constructor
      * @param {string}      name       le nom du composant
      */
-    constructor(name){
-        super(name, document.body, "div");
+    constructor(name, domTarget){
+        super(name, domTarget, "div");
         // veloReservation[name] = this;
         // this.name = name;
         this.DOM.id="mapid";
@@ -21,6 +21,7 @@ class MapLeaflet extends Composant {
             zoomOffset: -1,
             accessToken: 'your.mapbox.access.token',
         }).addTo(this.mymap);
+        this.addToMap(veloReservation.dataHandler.data);
     }
 
     addToMap(list) {

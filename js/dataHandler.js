@@ -13,9 +13,10 @@ class DataHandler{
             firstName:""
         };
         this.booked = null;
-        // sessionStorage.setItem('name',"Gabrielle");
+        // this.saveDataFromForm();
         this.getUserFormLocalStorage();
         this.getBookingFormSessionStorage();
+        // sessionStorage.setItem('name',"Gabrielle");
         this.getDataFromApi(apiSrc);
         veloReservation.dataHandler = this;
     }
@@ -26,11 +27,21 @@ class DataHandler{
         veloReservation.map.addToMap(this.data);
     }
 
+    saveDataFromForm(){
+    //     let name = document.getElementById(name);
+    //     // let firstName = document.getElementById(${veloReservation.dataHandler.user.firstName});
+        var name = "";
+        localStorage.setItem('name', document.getElementById("name").value);
+        localStorage.setItem('Prenom', firstName);
+    }
+
+
     getUserFormLocalStorage(){
         const name      = localStorage.getItem('name');
         const firstName = localStorage.getItem('firstName');
         if ( name !== null ) this.user.name = name;
         if ( firstName !== null ) this.user.firstName = firstName;
+        console.log(name);
     }
 
     getBookingFormSessionStorage(){

@@ -3,6 +3,6 @@ var veloReservation = {};
 new MapLeaflet("map");
 new DataHandler(`https://api.jcdecaux.com/vls/v1/stations?contract=${config.contractJCDecaux}&apiKey=${config.keyJCDecaux}`);
 new Reservation();
-new ReservationDetails("reservationDetails");
+
 
 

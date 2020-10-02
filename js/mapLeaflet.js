@@ -11,7 +11,7 @@ class MapLeaflet extends Composant {
         super(name, document.body, "div");
         // veloReservation[name] = this;
         // this.name = name;
-        this.DOM.id="mapid"
+        this.DOM.id="mapid";
         this.mymap = L.map('mapid').setView([config.lat, config.long], 13);
         L.tileLayer(`https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${config.leafletToken}`, {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -34,7 +34,7 @@ class MapLeaflet extends Composant {
             marker = new L.marker(latLng, {title: list[i].name});
             marker.bindPopup(`
                 <em>${list[i].name}</em><br>
-                <i class="fas fa-parking"></i> : ${list[i].bike_stands}<br>
+                <i class="fas fa-store"></i> : ${list[i].bike_stands}<br>
             `);
             marker.on("click", function(){
                 window.veloReservation.reservation.newBooking(i)

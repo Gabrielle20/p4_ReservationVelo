@@ -10,6 +10,10 @@ body {
     padding: 0px;
 }
 
+.content {
+    display:flex;
+}
+
 #mapid {
     height: 500px;
     width: 800px;

@@ -27,12 +27,6 @@ class Reservation extends Composant{
       Prénom : <input type="text" id="firstName" name="firstName" id="firstName" value="${this.user.firstName}" placeholder="saisissez votre prénom"><br/><br/>
       <button onclick="veloReservation.reservation.click()">Réserver</button>
     `;
-    // document.getElementById("reservation").addEventListener("submit", function(e){
-    //   var inputs = document.getElementsByTagName("input");
-    //   console.log("inputs");
-    // });
-
-    // veloReservation.dataHandler.user.name
  
   }
 
@@ -45,14 +39,9 @@ class Reservation extends Composant{
     veloReservation.dataHandler.setBooking(Date.now(), this.standNumber);
     console.log(this);
 
+    veloReservation.canvas.mousedown();
+    console.log(this);
+
   }
-
-  // result(){
-  //   let name = document.getElementById(${veloReservation.dataHandler.user.name});
-  //   let firstName = document.getElementById(${veloReservation.dataHandler.user.firstName});
-
-  //   sessionStorage.setItem('Nom', name);
-  //   sessionStorage.setItem('Prenom', firstName);
-  // }
 
 }

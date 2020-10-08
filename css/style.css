@@ -1,5 +1,4 @@
 * {
-
     padding: 0px;
 }
 
@@ -8,23 +7,75 @@ body {
     width: 1200px;
     margin: 0 auto;
     padding: 0px;
+    font-family: Helvetica, sans-serif;
 }
 
 .content {
     display:flex;
+    
 }
 
 #mapid {
-    height: 500px;
+    height: 400px;
     width: 800px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
 }
+
 
 main {
     display: flex;
+    justify-content: space-evenly;
+}
+
+reservation {
+    position:relative;
+    height: 200px;
+    min-width:175px;
+    margin-left: 5px;
+    margin-right:5px;
+    padding: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    background-color: lightgrey;
+    font-size: 14px;
+}
+
+reservation h4 {
+    margin: 0;
+    text-align: center;
+    
+}
+
+reservation label {
+    display: block;
+    width: 60px;
+    float: left;
+    font-size: 14px;
+}
+
+reservation input {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+reservation button {
+    position: absolute;
+    bottom: 5px;
+    left:0;
+    right:0;
+    margin-left: auto;
+ 	margin-right: auto;
+    width: 100px;
+    height: 30px;
+    border-radius:5px;
+    border: 1px double rgba(0, 0, 0, 0.5);
+}
+
+reservation button:hover {
+    background-color: lightskyblue;
 }
 
 canvas {
   border: 1px solid red;
-    height: 500px;
+    height: 400px;
     width: 200px;
 }

@@ -21,10 +21,11 @@ class Reservation extends Composant{
 
   render(){
     this.DOM.innerHTML = `
+    <h4>DÉTAILS DE RÉSERVATION :</h4><br/>
       Adresse : ${this.address} <br/>
-      <i class="fas fa-parking"></i> : ${this.available_bike_stands} | <i class="fas fa-bicycle"></i> : ${this.available_bikes}<br/>
-      Nom : <input type="text" id="name" name="name" id="name" value="${this.user.name}" placeholder="saisissez votre nom"><br/>
-      Prénom : <input type="text" id="firstName" name="firstName" id="firstName" value="${this.user.firstName}" placeholder="saisissez votre prénom"><br/><br/>
+      <i class="fas fa-parking"></i> : ${this.available_bike_stands} | <i class="fas fa-bicycle"></i> : ${this.available_bikes}<br/><br/>
+      <label for="">Nom :</label><input type="text" id="name" name="name" id="name" value="${this.user.name}" placeholder="saisissez votre nom" required><br/>
+      <label for="">Prénom :</label><input type="text" id="firstName" name="firstName" id="firstName" value="${this.user.firstName}" placeholder="saisissez votre prénom" required><br/><br/>
       <button onclick="veloReservation.reservation.click()">Réserver</button>
     `;
  
@@ -39,9 +40,9 @@ class Reservation extends Composant{
     veloReservation.dataHandler.setBooking(Date.now(), this.standNumber);
     console.log(this);
 
-    veloReservation.canvas.mousedown();
-    console.log(this);
-
+    veloReservation.canvas.this.DOM.onmousedown;
+    veloReservation.canvas.this.DOM.onmousemove;
+    veloReservation.canvas.this.DOM.onmouseup;
   }
 
 }

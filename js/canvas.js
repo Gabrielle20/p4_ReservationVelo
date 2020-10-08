@@ -1,7 +1,7 @@
 class Canvas extends Composant {
   constructor(domTarget) {
     super("canvas", domTarget, "canvas");
-    this.DOM.height        = "500";
+    this.DOM.height        = "400";
     this.DOM.width         = "200";
     this.clickDrag         = [];
     this.context           = this.DOM.getContext('2d');

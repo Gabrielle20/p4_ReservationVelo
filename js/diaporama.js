@@ -9,9 +9,6 @@ class Diaporama extends Composant{
    */
   constructor(name, domTarget, images, timeout){
     super(name, domTarget, "diaporama");
-    // console.log(this);
-    // const err = new Error();
-    // console.error(err.stack);
     
     console.log(this);
     
@@ -76,8 +73,5 @@ class Diaporama extends Composant{
     this.tempo = setInterval(this.nextSlide.bind(this), this.timeout);
   }
 
-  // onkeypress
-  // onkeydown
-  // onkeyup
- 
+
 }

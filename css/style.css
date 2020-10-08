@@ -22,3 +22,9 @@ body {
 main {
     display: flex;
 }
+
+canvas {
+  border: 1px solid red;
+    height: 500px;
+    width: 200px;
+}

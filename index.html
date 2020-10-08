@@ -1,45 +1,61 @@
 <!DOCTYPE html>
-<html lang = "fr">
+<html lang="fr">
 <html>
-    <head>
-        <title>Réservation de vélo à Bordeaux</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/slide.css">
-        <link rel="stylesheet" href="css/diaporama.css">
-        <link rel="stylesheet" href="css/slideButton.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity = "sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog == " crossorigin = "anonymous" />
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css" integrity="sha512-BBToHPBStgMiw0lD4AtkRIZmdndhB6aQbXpX7omcrXeG2PauGBl2lzq2xUZTxaLxYz5IDHlmneCZ1IJ+P3kYtQ==" crossorigin="anonymous" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css" integrity="sha512-RLEjtaFGdC4iQMJDbMzim/dOvAu+8Qp9sw7QE4wIMYcg2goVoivzwgSZq9CsIxp4xKAZPKh5J2f2lOko2Ze6FQ==" crossorigin="anonymous" />
+
+<head>
+  <title>Réservation de vélo à Bordeaux</title>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/slide.css">
+  <link rel="stylesheet" href="css/diaporama.css">
+  <link rel="stylesheet" href="css/slideButton.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog == "
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css"
+    integrity="sha512-BBToHPBStgMiw0lD4AtkRIZmdndhB6aQbXpX7omcrXeG2PauGBl2lzq2xUZTxaLxYz5IDHlmneCZ1IJ+P3kYtQ=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css"
+    integrity="sha512-RLEjtaFGdC4iQMJDbMzim/dOvAu+8Qp9sw7QE4wIMYcg2goVoivzwgSZq9CsIxp4xKAZPKh5J2f2lOko2Ze6FQ=="
+    crossorigin="anonymous" />
 
 
-        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-        crossorigin=""></script>
-        <script src = "js/config.js"></script>
-        <script src = "js/composant.js"></script>
-        <script src = "js/diaporama.js"></script>
-        <script src = "js/slide.js"></script>
-        <script src = "js/slideButton.js"></script>
-        <script src = "js/composantTest.js"></script>
-        <script src = "js/composantTest2.js"></script>
-        <script src = "js/dataHandler.js"></script>
-        <script src = "js/reservation.js"></script>
-        <script src = "js/canvas.js"></script>
-        <script src = "js/mapLeaflet.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js" integrity="sha512-MQlyPV+ol2lp4KodaU/Xmrn+txc1TP15pOBF/2Sfre7MRsA/pB4Vy58bEqe9u7a7DczMLtU5wT8n7OblJepKbg==" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+  <script src="js/config.js"></script>
+  <script src="js/composant.js"></script>
+  <script src="js/diaporama.js"></script>
+  <script src="js/slide.js"></script>
+  <script src="js/slideButton.js"></script>
+  <script src="js/composantTest.js"></script>
+  <script src="js/composantTest2.js"></script>
+  <script src="js/dataHandler.js"></script>
+  <script src="js/reservation.js"></script>
+  <script src="js/canvas.js"></script>
+  <script src="js/mapLeaflet.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"
+    integrity="sha512-MQlyPV+ol2lp4KodaU/Xmrn+txc1TP15pOBF/2Sfre7MRsA/pB4Vy58bEqe9u7a7DczMLtU5wT8n7OblJepKbg=="
+    crossorigin="anonymous"></script>
 
 
-        <script src = "js/main.js" defer></script>
-    </head>
-    <body>
-        <div class = "main-banner" id = "main-banner"></div>
-        <loading>chargement en cours</loading>
-   
-        <main>
-            <!-- <canvas id = "canvasSignature" width = "200" height = "350"></canvas> -->
-        </main>
+  <script src="js/main.js" defer></script>
+</head>
 
-    </body>
+<body>
+  <div class="main-banner" id="main-banner"></div>
+  <loading>chargement en cours</loading>
+
+  <main>
+    <!-- <canvas id = "canvasSignature" width = "200" height = "350"></canvas> -->
+  </main>
+
+</body>
+
 </html>

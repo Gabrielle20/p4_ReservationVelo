@@ -41,8 +41,6 @@ class Reservation extends Composant{
     console.log(this);
 
     veloReservation.canvas.this.DOM.onmousedown;
-    veloReservation.canvas.this.DOM.onmousemove;
-    veloReservation.canvas.this.DOM.onmouseup;
   }
 
 }

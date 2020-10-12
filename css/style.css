@@ -36,7 +36,7 @@ reservation {
     margin-right:5px;
     padding: 5px;
     border: 1px solid rgba(0, 0, 0, 0.4);
-    background-color: lightgrey;
+    /* background-color: lightgrey; */
     font-size: 14px;
 }
 
@@ -78,4 +78,37 @@ canvas {
   border: 1px solid red;
     height: 400px;
     width: 200px;
+}
+
+
+
+@media screen and (max-width: 1200) {
+    body {
+        width:1200;
+    }
+
+    diaporama {
+        width:1200px;
+    }
+    
+    canvas {
+        border-color: green;
+    }
+}
+
+
+
+
+@media screen and (max-width: 800) {
+    body {
+        width:800px;
+    }
+
+    diaporama {
+        width:800px;
+    }
+    
+    canvas {
+        border-color: green;
+    }
 }

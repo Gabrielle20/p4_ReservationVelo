@@ -3,7 +3,7 @@ slideButton {
     width: 65px;
     top: -30px;
     display: inline-block;
-    background-color: #d7d7d7;
+    background-color: #1F2B4C;
     margin-left: 1rem;
     text-align: center;
     border-radius: .25rem;
@@ -29,3 +29,6 @@ slidebutton.play:before {
 slidebutton.pause:before {
     content: "\f04c";
 }
+
+
+/* d7d7d7 */

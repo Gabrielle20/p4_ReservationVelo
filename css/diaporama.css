@@ -9,3 +9,9 @@ diaporama {
   position: relative;
 }
 
+/* @media all and (max-width: 800) {
+  diaporama {
+      width:800%;
+  }
+} */
+

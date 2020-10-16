@@ -1,14 +1,18 @@
-class Canvas extends Composant {
-  constructor(domTarget) {
-    super("canvas", domTarget, "canvas");
-    this.DOM.height        = "400";
-    this.DOM.width         = "200";
+class Canvas {
+  constructor() {
+    this.DOM = document.querySelector("canvas");
+    veloReservation.canvas = this;
+    // this.DOM.height        = "400";
+    // this.DOM.width         = "200";
     this.clickDrag         = [];
     this.context           = this.DOM.getContext('2d');
     this.paint             = false;
     this.previousClickX    = null;
     this.previousClickY    = null;
     this.rect              = this.DOM.getBoundingClientRect();
+    this.cliked = false;
+
+    this.DOM.onclick = null;
 
     this.DOM.onmousedown   = this.mouseDown.bind(this);
     this.DOM.onmousemove   = this.mouseMove.bind(this);
@@ -38,6 +42,7 @@ class Canvas extends Composant {
   mouseDown(e) {
     const position = this.convertCoordMouse(e);
     this.paint = true;
+    this.clicked = true;
     this.draw(position.x, position.y);
   }
 

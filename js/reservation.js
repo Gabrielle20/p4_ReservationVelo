@@ -8,7 +8,6 @@ class Reservation extends Composant{
     if (this.booking !== null) {
       this.newBooking(this.booking.stationInformation);
     }
-    this.onmousedown = veloReservation.canvas.this.DOM.onmousedown();
   }
 
   newBooking(standNumber){
@@ -27,21 +26,23 @@ class Reservation extends Composant{
       <i class="fas fa-parking"></i> : ${this.available_bike_stands} | <i class="fas fa-bicycle"></i> : ${this.available_bikes}<br/><br/>
       <label for="">Nom :</label><input type="text" id="name" name="name" id="name" value="${this.user.name}" placeholder="saisissez votre nom" required><br/>
       <label for="">Prénom :</label><input type="text" id="firstName" name="firstName" id="firstName" value="${this.user.firstName}" placeholder="saisissez votre prénom" required><br/><br/>
+      <canvas width="200" height="400"></canvas><br>
       <button onclick="veloReservation.reservation.click()">Réserver</button>
     `;
- 
+    new Canvas();
   }
 
   click(){
+    if (veloReservation.canvas.clicked=== false) {
+      alert("il faut signer");
+      return;
+    }
     this.user = {
       firstName: document.querySelector("#firstName").value,
       name     : document.querySelector("#name").value
     }
     veloReservation.dataHandler.setUser(this.user);
     veloReservation.dataHandler.setBooking(Date.now(), this.standNumber);
-    console.log(this);
-
-    this.onmousedown;
     console.log(this);
   }
 

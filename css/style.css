@@ -30,7 +30,7 @@ main {
 
 reservation {
     position:relative;
-    height: 200px;
+    /* height: 200px; */
     min-width:175px;
     margin-left: 5px;
     margin-right:5px;
@@ -58,12 +58,12 @@ reservation input {
 }
 
 reservation button {
-    position: absolute;
+    /* position: absolute; */
     bottom: 5px;
     left:0;
     right:0;
     margin-left: auto;
- 	margin-right: auto;
+    margin-right: auto;
     width: 100px;
     height: 30px;
     border-radius:5px;

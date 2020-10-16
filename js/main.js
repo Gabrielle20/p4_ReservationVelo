@@ -8,7 +8,6 @@ function initPage(){
     new Diaporama("diaporama",document.querySelector("#main-banner"), ["images/diapo1.jpg","images/diapo2.jpg","images/diapo3.jpg"], 5000);
     new MapLeaflet("map", document.querySelector("main"));
     new Reservation(document.querySelector("main"));
-    new Canvas(document.querySelector("main"));
 }
 
 

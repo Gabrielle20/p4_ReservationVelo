@@ -13,10 +13,6 @@ class DataHandler{
             firstName:""
         };
         this.booking = null;
-        // this.saveDataFromForm();
-        // this.getUserFormLocalStorage();
-        // this.getBookingFormSessionStorage();
-        // sessionStorage.setItem('name',"Gabrielle");
         this.getDataFromApi(apiSrc);
         veloReservation.dataHandler = this;
     }
@@ -61,4 +57,15 @@ class DataHandler{
         };
         return this.booking;
     }
+
+
+
+    // countdown() {
+    //     var now = new Date();
+    //     var eventDate = new Date(m / 20);
+
+    //     var currentTime = now.getTime();
+    //     var eventDate = eventDate.getTime();
+
+    //     var remainingTime = eventDate - currentTime;
 }

@@ -8,6 +8,7 @@ class Reservation extends Composant{
     if (this.booking !== null) {
       this.newBooking(this.booking.stationInformation);
     }
+    this.onmousedown = veloReservation.canvas.this.DOM.onmousedown();
   }
 
   newBooking(standNumber){
@@ -40,7 +41,8 @@ class Reservation extends Composant{
     veloReservation.dataHandler.setBooking(Date.now(), this.standNumber);
     console.log(this);
 
-    veloReservation.canvas.this.DOM.onmousedown;
+    this.onmousedown;
+    console.log(this);
   }
 
 }

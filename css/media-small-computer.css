@@ -1,0 +1,19 @@
+@media screen and (max-width: 800px) {
+    body {
+        width : 800px;
+    }
+
+    diaporama {
+        width : 800px;
+    }
+
+    main {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+
+    #mapid {
+        width : 550px;
+        border-radius : unset;
+    }
+}

@@ -1,0 +1,20 @@
+@media screen and (max-width: 1050px) {
+    body {
+        width : 1050px;
+    }
+
+    diaporama {
+        width : 1050px;
+    }
+
+    main {
+        display : block;
+        margin-left : 2.5rem;
+        margin-right : 2.5rem;
+    }
+
+    reservation {
+        width: 1050px;
+        border:none;
+    }
+}

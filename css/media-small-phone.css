@@ -1,0 +1,59 @@
+@media screen and (max-width: 320px) {
+    body {
+        width:320px;
+    }
+
+    diaporama {
+        width:320px;
+    }
+
+    main {
+        display:block;
+    }
+
+    #mapid {
+        width: 100%;
+        height: 250px;
+        border-radius:unset;
+    }
+
+    reservation {
+        width:100%;
+        padding:unset;
+        padding-left:1rem;
+        padding-right:1rem;
+        margin:unset;
+        border:none;
+        text-align:center;
+        
+    }
+
+    /* reservation h4 {
+        margin-top: 1.5rem;
+    } */
+
+    reservation p {
+        margin:5px;
+    }
+
+    i.fas .fa-parking {
+        text-align:center;
+    }
+
+    reservation label {
+        text-align: left;
+    }
+
+    reservation button {
+        margin:auto
+    }
+
+    canvas {
+        border-color: green;
+        margin-left: auto;
+        margin-right: auto;
+        width: 200px;
+        height:200x
+    }
+}
+

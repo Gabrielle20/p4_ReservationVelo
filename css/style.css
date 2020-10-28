@@ -25,7 +25,7 @@ body {
 
 main {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 reservation {
@@ -54,20 +54,20 @@ reservation label {
 }
 
 reservation input {
-    border: 1px solid rgba(0, 0, 0, 0.5);
+    /* border: 1px solid rgba(0, 0, 0, 0.5); */
 }
 
 reservation button {
     /* position: absolute; */
-    bottom: 5px;
+    /* bottom: 5px;
     left:0;
-    right:0;
+    right:0; */
     margin-left: auto;
     margin-right: auto;
     width: 100px;
     height: 30px;
     border-radius:5px;
-    border: 1px double rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 reservation button:hover {
@@ -76,39 +76,7 @@ reservation button:hover {
 
 canvas {
   border: 1px solid red;
-    height: 400px;
+    height: 200px;
     width: 200px;
 }
 
-
-
-@media screen and (max-width: 1200) {
-    body {
-        width:1200;
-    }
-
-    diaporama {
-        width:1200px;
-    }
-    
-    canvas {
-        border-color: green;
-    }
-}
-
-
-
-
-@media screen and (max-width: 800) {
-    body {
-        width:800px;
-    }
-
-    diaporama {
-        width:800px;
-    }
-    
-    canvas {
-        border-color: green;
-    }
-}

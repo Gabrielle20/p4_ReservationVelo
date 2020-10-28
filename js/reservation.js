@@ -21,12 +21,12 @@ class Reservation extends Composant{
 
   render(){
     this.DOM.innerHTML = `
-    <h4>DÉTAILS DE RÉSERVATION :</h4><br/>
-      Adresse : ${this.address} <br/>
-      <i class="fas fa-parking"></i> : ${this.available_bike_stands} | <i class="fas fa-bicycle"></i> : ${this.available_bikes}<br/><br/>
+    <h4>DÉTAILS DE RÉSERVATION :</h4>
+      <p>Adresse : ${this.address}</p>
+      <i class="fas fa-parking"> : ${this.available_bike_stands}</i> | <i class="fas fa-bicycle"> : ${this.available_bikes}</i><br/><br/>
       <label for="">Nom :</label><input type="text" id="name" name="name" id="name" value="${this.user.name}" placeholder="saisissez votre nom" required><br/>
       <label for="">Prénom :</label><input type="text" id="firstName" name="firstName" id="firstName" value="${this.user.firstName}" placeholder="saisissez votre prénom" required><br/><br/>
-      <canvas width="200" height="400"></canvas><br>
+      <canvas></canvas><br>
       <button onclick="veloReservation.reservation.click()">Réserver</button>
     `;
     new Canvas();
@@ -43,6 +43,7 @@ class Reservation extends Composant{
     }
     veloReservation.dataHandler.setUser(this.user);
     veloReservation.dataHandler.setBooking(Date.now(), this.standNumber);
+    // veloReservation.dataHandler.setBooking(countdown(), this.standNumber);
     console.log(this);
   }
 

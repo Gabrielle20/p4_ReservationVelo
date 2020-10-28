@@ -28,13 +28,13 @@ class DataHandler{
         localStorage.setItem('firstName', user.firstName);
     }
 
-    setBooking(timestamp, stationInformation){
+    setBooking(endBooking, stationInformation){
     // setBooking(countdown(), stationInformation){
         this.booking = {
-            timestamp : countdown(),
+            endBooking : endBooking,
             stationInformation : stationInformation
         };
-        sessionStorage.setItem('timestamp', timestamp);
+        sessionStorage.setItem('endBooking', endBooking);
         sessionStorage.setItem('stationInformation', stationInformation);
     }
 
@@ -70,21 +70,5 @@ class DataHandler{
 
     //     var remainingTime = eventDate - currentTime;
 
-    countdown() {
-        const startingMinutes = 20;
-        let time = startingMinutes * 60;
-        setInterval(updateCountdown, 1000);
 
-        updateCountdown ();
-    }
-
-    updateCountdown (){
-        const minutes = Math.floor(time / 60);
-        let seconds = time % 60;
-
-        seconds = seconds < 10 ? '0' + seconds : seconds;
-
-        countdownEl.innerHTML = `${minutes}: ${seconds}`;
-        time--;
-    }
 }

@@ -1,9 +1,10 @@
 class Reservation extends Composant{
-  constructor(domTarget){
+  constructor(domTarget, bookingDuration){
     super("reservation", domTarget, "reservation");
     // veloReservation.reservation = this;
     this.booking = veloReservation.dataHandler.getBookingFromSessionStorage();
     this.user       = veloReservation.dataHandler.getUserFromLocalStorage();
+    this.bookingDuration = bookingDuration;
     console.log(this.booking);
     if (this.booking !== null) {
       this.newBooking(this.booking.stationInformation);
@@ -41,10 +42,30 @@ class Reservation extends Composant{
       firstName: document.querySelector("#firstName").value,
       name     : document.querySelector("#name").value
     }
+    this.endBooking = new Date().addMinutes(this.bookingDuration);
+    
     veloReservation.dataHandler.setUser(this.user);
-    veloReservation.dataHandler.setBooking(Date.now(), this.standNumber);
+    veloReservation.dataHandler.setBooking(this.endBooking, this.standNumber);
     // veloReservation.dataHandler.setBooking(countdown(), this.standNumber);
     console.log(this);
+    this.updateCountdown();
+    this.tempo = setInterval(this.updateCountdown.bind(this),500);
   }
+  // countdown() {
+  //     const startingMinutes = 20;
+  //     let time = startingMinutes * 60;
+  //     setInterval(updateCountdown, 1000);
 
+  //     updateCountdown ();
+  // }
+
+  updateCountdown (){
+      const gap = Math.round((this.endBooking - Date.now()) / 1000);
+      const minutes = Math.floor(gap / 60 );
+      let seconds = gap % 60;
+      seconds = seconds < 10 ? '0' + seconds : seconds;
+
+      // countdownEl.innerHTML = `${minutes}: ${seconds}`;
+      // time--;
+  }
 }

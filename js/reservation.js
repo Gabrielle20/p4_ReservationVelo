@@ -29,7 +29,9 @@ class Reservation extends Composant{
       <label for="">Prénom :</label><input type="text" id="firstName" name="firstName" id="firstName" value="${this.user.firstName}" placeholder="saisissez votre prénom" required><br/><br/>
       <canvas></canvas><br>
       <button onclick="veloReservation.reservation.click()">Réserver</button>
+      <p>Votre réservation prendra fin dans ${this.endBooking}</p>
     `;
+
     new Canvas();
   }
 
@@ -46,18 +48,10 @@ class Reservation extends Composant{
     
     veloReservation.dataHandler.setUser(this.user);
     veloReservation.dataHandler.setBooking(this.endBooking, this.standNumber);
-    // veloReservation.dataHandler.setBooking(countdown(), this.standNumber);
     console.log(this);
     this.updateCountdown();
     this.tempo = setInterval(this.updateCountdown.bind(this),500);
   }
-  // countdown() {
-  //     const startingMinutes = 20;
-  //     let time = startingMinutes * 60;
-  //     setInterval(updateCountdown, 1000);
-
-  //     updateCountdown ();
-  // }
 
   updateCountdown (){
       const gap = Math.round((this.endBooking - Date.now()) / 1000);
@@ -65,7 +59,14 @@ class Reservation extends Composant{
       let seconds = gap % 60;
       seconds = seconds < 10 ? '0' + seconds : seconds;
 
-      // countdownEl.innerHTML = `${minutes}: ${seconds}`;
-      // time--;
+      // if (minutes < 0) {
+      //   clearInterval(this.tempo);
+      //   return 'Votre réservation est arrivée à son terme.';
+      // }
+
+      // else {
+      //   let newP = document.createElement('p');
+      //   newP.textContent = 'Votre réservation prendra fin dans '.this.endBooking;
+      // }
   }
 }

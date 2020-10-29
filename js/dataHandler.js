@@ -29,7 +29,6 @@ class DataHandler{
     }
 
     setBooking(endBooking, stationInformation){
-    // setBooking(countdown(), stationInformation){
         this.booking = {
             endBooking : endBooking,
             stationInformation : stationInformation
@@ -58,17 +57,5 @@ class DataHandler{
         };
         return this.booking;
     }
-
-
-
-    // countdown() {
-    //     var now = new Date();
-    //     var eventDate = new Date(m / 20);
-
-    //     var currentTime = now.getTime();
-    //     var eventDate = eventDate.getTime();
-
-    //     var remainingTime = eventDate - currentTime;
-
 
 }

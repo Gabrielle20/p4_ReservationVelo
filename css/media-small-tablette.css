@@ -1,10 +1,10 @@
 @media screen and (max-width:835px) {
     body {
-        width : 835px;
+        width : 750px;;
     }
 
     diaporama {
-        width : 835px;
+        width : 750px;;
     }
 
     main {
@@ -13,7 +13,7 @@
     }
 
     #mapid {
-        width : 835px;
+        width : 750px;;
         /* margin-left : 10px;
         margin-right : 10px; */
     }

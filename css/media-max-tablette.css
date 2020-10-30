@@ -1,10 +1,10 @@
 @media screen and (max-width: 1050px) {
     body {
-        width : 1050px;
+        width : 900px;
     }
 
     diaporama {
-        width : 1050px;
+        width : 900px;
     }
 
     main {
@@ -14,7 +14,7 @@
     }
 
     reservation {
-        width: 1050px;
+        width: 900px;
         border:none;
     }
 }

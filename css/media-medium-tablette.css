@@ -1,9 +1,9 @@
 @media screen and (max-width: 1015px) {
     body {
-        width : 1015px;
+        width : 900px;
     }
 
     diaporama {
-        width : 1015px;
+        width : 900px;
     }
 }

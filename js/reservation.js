@@ -29,7 +29,8 @@ class Reservation extends Composant{
       <label for="">Prénom :</label><input type="text" id="firstName" name="firstName" id="firstName" value="${this.user.firstName}" placeholder="saisissez votre prénom" required><br/><br/>
       <canvas></canvas><br>
       <button onclick="veloReservation.reservation.click()">Réserver</button>
-      <p>Votre réservation prendra fin dans ${this.endBooking}</p>
+      <p>Votre réservation prendra fin dans ${this.endBooking}</p>
+
     `;
 
     new Canvas();
@@ -49,6 +50,10 @@ class Reservation extends Composant{
     veloReservation.dataHandler.setUser(this.user);
     veloReservation.dataHandler.setBooking(this.endBooking, this.standNumber);
     console.log(this);
+
+    // let newP = document.createElement('p');
+    // newP.textContent = "Votre réservation prendra fin dans ".this.endBooking;
+
     this.updateCountdown();
     this.tempo = setInterval(this.updateCountdown.bind(this),500);
   }
@@ -66,7 +71,7 @@ class Reservation extends Composant{
 
       // else {
       //   let newP = document.createElement('p');
-      //   newP.textContent = 'Votre réservation prendra fin dans '.this.endBooking;
+      //   newP.textContent = "Votre réservation prendra fin dans ".this.endBooking;
       // }
   }
 }

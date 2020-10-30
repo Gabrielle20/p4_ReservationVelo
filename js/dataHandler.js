@@ -28,13 +28,16 @@ class DataHandler{
         localStorage.setItem('firstName', user.firstName);
     }
 
-    setBooking(endBooking, stationInformation){
+    setBooking(booking){
+      console.log("dataHandler  booking", booking)
         this.booking = {
-            endBooking : endBooking,
-            stationInformation : stationInformation
+            address : booking.address,
+            timestamp : booking.timestamp,
+            stationInformation : booking.stationInformation
         };
-        sessionStorage.setItem('endBooking', endBooking);
-        sessionStorage.setItem('stationInformation', stationInformation);
+        sessionStorage.setItem('address', booking.address);
+        sessionStorage.setItem('timestamp', booking.timestamp);
+        sessionStorage.setItem('stationInformation', booking.stationInformation);
     }
 
 
@@ -50,10 +53,12 @@ class DataHandler{
     getBookingFromSessionStorage(){
         const timestamp          = sessionStorage.getItem('timestamp');
         const stationInformation = sessionStorage.getItem('stationInformation');
-        if (timestamp === null && stationInformation === null) return null;
+        const address = sessionStorage.getItem('address');
+        if (timestamp === null && stationInformation === null) return {};
         this.booking = {
             timestamp : timestamp,
-            stationInformation : stationInformation
+            stationInformation : stationInformation,
+            address : address
         };
         return this.booking;
     }

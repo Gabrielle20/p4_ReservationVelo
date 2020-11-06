@@ -1,8 +1,8 @@
 class Reservation extends Composant {
 
-  booking = {};
-  bookingDuration;
-  user;
+  // booking = {};
+  // bookingDuration;
+  // user;
 
   constructor(domTarget, bookingDuration) {
     super("reservation", domTarget, "reservation");
@@ -16,16 +16,16 @@ class Reservation extends Composant {
     }
   }
 
-  // newBooking(standNumber) {
-  //   console.log("newBooking", standNumber);
-  //   this.booking.address = veloReservation.dataHandler.data[standNumber].address;
-  //   this.available_bike_stands =
-  //     veloReservation.dataHandler.data[standNumber].available_bike_stands;
-  //   this.available_bikes =
-  //     veloReservation.dataHandler.data[standNumber].available_bikes;
-  //   this.booking.stationInformation = standNumber;
-  //   this.render();
-  // }
+  newBooking(standNumber) {
+    console.log("newBooking", standNumber);
+    this.booking.address = veloReservation.dataHandler.data[standNumber].address;
+    this.available_bike_stands =
+      veloReservation.dataHandler.data[standNumber].available_bike_stands;
+    this.available_bikes =
+      veloReservation.dataHandler.data[standNumber].available_bikes;
+    this.booking.stationInformation = standNumber;
+    this.render();
+  }
 
   render() {
     this.DOM.innerHTML = `
@@ -37,7 +37,7 @@ class Reservation extends Composant {
       <canvas></canvas><br>
       <button onclick="veloReservation.reservation.click()">Réserver</button>
       ${this.bookingText}
-    `;
+      `;
 
     new Canvas();
   }
@@ -45,6 +45,7 @@ class Reservation extends Composant {
   get bookingText(){
     if (this.booking.timestamp === undefined) return '';
     return `<p>Votre réservation prendra fin dans ${this.booking.timestamp}</p>`;
+    // return `<p>Votre réservation prendra fin dans ${this.updateCountdown()}</p>`;
   }
 
   click() {
@@ -57,15 +58,13 @@ class Reservation extends Composant {
       name: document.querySelector("#name").value,
     };
     this.booking.timestamp = new Date().addMinutes(this.bookingDuration);
-    this.booking.address = "jkljkljlkjlkj";
-    this.booking.stationInformation = "kkkkùklmk";
+    // this.booking.address = veloReservation.dataHandler.data[standNumber].address;
+    // this.available_bikes = veloReservation.dataHandler.data[standNumber].available_bikes;
+    // this.booking.stationInformation = "kkkkùklmk";
 
     veloReservation.dataHandler.setUser(this.user);
     veloReservation.dataHandler.setBooking(this.booking);
     console.log(this);
-
-    // let newP = document.createElement('p');
-    // newP.textContent = "Votre réservation prendra fin dans ".this.booking.timestamp;
 
     this.updateCountdown();
     this.tempo = setInterval(this.updateCountdown.bind(this), 1000);
@@ -77,7 +76,7 @@ class Reservation extends Composant {
     let seconds = gap % 60;
     seconds = seconds < 10 ? "0" + seconds : seconds;
 
-    // if (minutes < 0) {
+    // if (minutes === 0) {
     //   clearInterval(this.tempo);
     //   return 'Votre réservation est arrivée à son terme.';
     // }

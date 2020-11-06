@@ -10,7 +10,7 @@ class Canvas {
     this.previousClickX    = null;
     this.previousClickY    = null;
     this.rect              = this.DOM.getBoundingClientRect();
-    this.cliked = false;
+    this.clicked = false;
 
     this.DOM.onclick = null;
 

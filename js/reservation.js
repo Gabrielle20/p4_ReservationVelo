@@ -1,12 +1,7 @@
 class Reservation extends Composant {
 
-  // booking = {};
-  // bookingDuration;
-  // user;
-
   constructor(domTarget, bookingDuration) {
     super("reservation", domTarget, "reservation");
-    // veloReservation.reservation = this;
     this.booking = veloReservation.dataHandler.getBookingFromSessionStorage();
     this.user = veloReservation.dataHandler.getUserFromLocalStorage();
     this.remain = null;
@@ -45,9 +40,15 @@ class Reservation extends Composant {
   }
 
   get bookingText(){
+    this.DOM.innerHTML = `
+    <h5>INFORMATION SUR LA RÉSERVATION</H5>
+    <p>Nom : ${this.user.name}</p>
+    <p>Prénom : ${this.user.firstName}</p>
+    <p>Adresse : ${this.booking.address}</p>
+    `;
+    console.log("---", this.DOM.innerHTML);
     if (this.remain === null) return '';
     return `<p>Votre réservation prendra fin dans à ${this.remain}</p>`;
-    // return `<p>Votre réservation prendra fin dans ${this.updateCountdown()}</p>`;
   }
 
   click() {
@@ -65,13 +66,10 @@ class Reservation extends Composant {
       return;      
     }
     this.booking.timestamp = new Date().addMinutes(this.bookingDuration);
-    // this.booking.address = veloReservation.dataHandler.data[standNumber].address;
-    // this.available_bikes = veloReservation.dataHandler.data[standNumber].available_bikes;
-    // this.booking.stationInformation = "kkkkùklmk";
 
     veloReservation.dataHandler.setUser(this.user);
     veloReservation.dataHandler.setBooking(this.booking);
-    // console.log(this);
+  
 
     this.startCountdown();
   }
@@ -85,17 +83,9 @@ class Reservation extends Composant {
     this.remain =  minutes + ":"+seconds;
     if (this.remain === "0:00") {
       //on arrete le compte à rebours
+      clearInterval(this.tempo);
+      return 'Votre réservation est arrivée à son terme.';
     }
-
-    // if (minutes === 0) {
-    //   clearInterval(this.tempo);
-    //   return 'Votre réservation est arrivée à son terme.';
-    // }
-
-    // else {
-    //   let newP = document.createElement('p');
-    //   newP.textContent = "Votre réservation prendra fin dans ".this.booking.timestamp;
-    // }
 
     this.render();
   }

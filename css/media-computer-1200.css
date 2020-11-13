@@ -1,0 +1,10 @@
+@media screen and (max-width: 1200px) {
+    body {
+        width : 1000px;
+    }
+
+
+    diaporama {
+        width: 1000px;
+    }
+}

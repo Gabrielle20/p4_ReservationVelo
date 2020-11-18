@@ -40,15 +40,14 @@ class Reservation extends Composant {
   }
 
   get bookingText(){
-    this.DOM.innerHTML = `
+    if (this.remain === null) return '';
+    const text = `
     <h5>INFORMATION SUR LA RÉSERVATION</H5>
     <p>Nom : ${this.user.name}</p>
     <p>Prénom : ${this.user.firstName}</p>
     <p>Adresse : ${this.booking.address}</p>
     `;
-    console.log("---", this.DOM.innerHTML);
-    if (this.remain === null) return '';
-    return `<p>Votre réservation prendra fin dans à ${this.remain}</p>`;
+    return `<p>Votre réservation prendra fin dans à ${this.remain}</p>${text}`;
   }
 
   click() {

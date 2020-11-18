@@ -7,6 +7,14 @@
         width : 900px;
     }
 
+    diaporama img {
+        width : 900px;
+    }
+
+    slide img {
+        width : 900px;
+    }
+
     main {
         display : block;
         margin-left : 2.5rem;

@@ -7,4 +7,16 @@
     diaporama {
         width: 1000px;
     }
+
+    diaporama img {
+        width : 1000px;
+    }
+
+    slide {
+        width: 1000px;
+    }
+
+    slide img {
+        width : 1000px;
+    }
 }

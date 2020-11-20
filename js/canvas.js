@@ -2,8 +2,8 @@ class Canvas {
   constructor() {
     this.DOM = document.querySelector("canvas");
     veloReservation.canvas = this;
-    // this.DOM.height        = "400";
-    // this.DOM.width         = "200";
+    this.DOM.height        = "200";
+    this.DOM.width         = "200";
     this.clickDrag         = [];
     this.context           = this.DOM.getContext('2d');
     this.paint             = false;
@@ -53,9 +53,10 @@ class Canvas {
   }
 
   convertCoordTouch(e) {
+    this.rect = this.DOM.getBoundingClientRect();
     return {
-      x: e.changedTouches[0].pageX - this.rect.left,
-      y: e.changedTouches[0].pageY - this.rect.top
+      x: e.changedTouches[0].clientX - this.rect.left,
+      y: e.changedTouches[0].clientY - this.rect.top
     }
   }
   convertCoordMouse(e) {
@@ -66,7 +67,7 @@ class Canvas {
   }
 
   draw(mouseX, mouseY) {
-    console.log(mouseX, mouseY);
+    // console.log(mouseX, mouseY);
     if (this.previousClickX !== null) {
       this.context.beginPath();
       this.context.strokeStyle = 'black';

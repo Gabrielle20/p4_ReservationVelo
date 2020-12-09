@@ -40,6 +40,7 @@ class Canvas {
 
   // Canvas Souris
   mouseDown(e) {
+    this.rect = this.DOM.getBoundingClientRect();
     const position = this.convertCoordMouse(e);
     this.paint = true;
     this.clicked = true;

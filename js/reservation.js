@@ -21,6 +21,7 @@ class Reservation extends Composant {
     this.available_bikes =
       veloReservation.dataHandler.data[standNumber].available_bikes;
     this.booking.stationInformation = standNumber;
+    this.booking.standNumber = standNumber;
     this.render();
   }
 
@@ -45,7 +46,7 @@ class Reservation extends Composant {
     <h5>INFORMATION SUR LA RÉSERVATION</H5>
     <p>Nom : ${this.user.name}</p>
     <p>Prénom : ${this.user.firstName}</p>
-    <p>Adresse : ${this.booking.address}</p>
+    <p>Adresse : ${veloReservation.dataHandler.getBookingFromSessionStorage().address}</p>
     `;
     return `<p>Votre réservation prendra fin dans à ${this.remain}</p>${text}`;
   }
@@ -65,27 +66,30 @@ class Reservation extends Composant {
       return;      
     }
     this.booking.timestamp = new Date().addMinutes(this.bookingDuration);
+    veloReservation.dataHandler.data[this.booking.standNumber].available_bikes--;
+    this.available_bikes = veloReservation.dataHandler.data[this.booking.standNumber].available_bikes;
 
     veloReservation.dataHandler.setUser(this.user);
     veloReservation.dataHandler.setBooking(this.booking);
-  
 
     this.startCountdown();
   }
 
   updateCountdown() {
-    console.log("ud")
     const gap = Math.round((this.booking.timestamp - Date.now()) / 1000);
     const minutes = Math.floor(gap / 60);
     let seconds = gap % 60;
     seconds = seconds < 10 ? "0" + seconds : seconds;
     this.remain =  minutes + ":"+seconds;
-    if (this.remain === "0:00") {
+    if (minutes <=0 && seconds === "00") {
       //on arrete le compte à rebours
       clearInterval(this.tempo);
-      return 'Votre réservation est arrivée à son terme.';
-    }
+      // return 'Votre réservation est arrivée à son terme.';
 
+      // veloReservation.dataHandler.data[ statnd information session storage ].available_bikes++;
+      //effacer session storage address et timestamp et station infoirmatiotn
+      this.booking = veloReservation.dataHandler.getBookingFromSessionStorage();
+    }
     this.render();
   }
 

@@ -95,26 +95,26 @@ class Canvas {
     this.clickDrag.push(dragging);
   }
 
-  redraw() {
-    this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height); //Nettoie le canvas
+  // redraw() {
+  //   this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height); //Nettoie le canvas
 
-    this.context.strokeStyle = "#df4b26";
-    this.context.lineJoin = "round";
-    this.context.lineWidth = 5;
+  //   this.context.strokeStyle = "#df4b26";
+  //   this.context.lineJoin = "round";
+  //   this.context.lineWidth = 5;
 
-    for (var i = 0; i < this.clickX.length; i++) {
-      this.context.beginPath();
-      if (this.clickDrag[i] && i) {
-        this.context.moveTo(this.clickX[i - 1], this.clickY[i - 1]);
-      }
-      else {
-        this.context.moveTo(this.clickX[i] - 1, this.clickY[i]);
-      }
+  //   for (var i = 0; i < this.clickX.length; i++) {
+  //     this.context.beginPath();
+  //     if (this.clickDrag[i] && i) {
+  //       this.context.moveTo(this.clickX[i - 1], this.clickY[i - 1]);
+  //     }
+  //     else {
+  //       this.context.moveTo(this.clickX[i] - 1, this.clickY[i]);
+  //     }
 
-      this.context.lineTo(this.clickX[i], this.clickY[i]);
-      this.context.closePath();
-      this.context.stroke();
-    }
-  }
+  //     this.context.lineTo(this.clickX[i], this.clickY[i]);
+  //     this.context.closePath();
+  //     this.context.stroke();
+  //   }
+  // }
 }
 

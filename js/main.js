@@ -7,7 +7,7 @@ function initPage(){
     toRemove.parentNode.removeChild(toRemove);
     new Diaporama("diaporama",document.querySelector("#main-banner"), ["images/diapo1.jpg","images/diapo2.jpg","images/diapo3.jpg"], 5000);
     new MapLeaflet("map", document.querySelector("main"));
-    new Reservation(document.querySelector("main"), 20);
+    new Reservation(document.querySelector("main"), config["reservationDuration"]);
 }
 
 

@@ -4,5 +4,5 @@ const config = {
   "lat"                 : 45.7605982,
   "leafletToken"        : "pk.eyJ1IjoiZ2FicmllbGxlY3AiLCJhIjoiY2tlbndmZjgwM2U1aTJ5bHR3Y2duN29nNiJ9.Eq2OKB_Ve6-L3_2mamC6OQ",
   "long"                : 4.8229873,
-  "reservationDuration" : .5,
+  "reservationDuration" : 20,
 }
